@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kino</title>
+    <link rel="stylesheet" href="styles/index.css" />
+    <link rel="stylesheet" href="styles/colors.css" />
+    <link rel="stylesheet" href="styles/typography.css" />
+    <link rel="stylesheet" href="styles/layout.css" />
+    <script src="scripts/index.js" defer></script>
+  </head>
+  <body class="font-sans">
+    <main class="flex flex-col">
+      <header class="header">
+        <p class="font-serif">cinema</p>
+      </header>
+      <main class="flex flex-col">
+        <section id="landing">
+          <img src="assets/chicago-cinema.jpg" alt="Chicago Cinema" />
+          <div class="hero-container">
+            <h1 class="hero font-serif">End your day in the best way</p>
+          </div>
+        </section>
+        <section id="discovery">
+          <div class="description">
+            <h2 class="font-serif">Entdecke deinen Film</h2>
+            <p class="font-thin font-sans">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+          </div>
+          <div class="carousel" id="movies">
+            <div class="carousel-item">
+              <img src="assets/john-wick.jpg" alt="John Wick">
+              <div class="flex flex-col movie-description">
+                <p class="movie-name">John Wick</p>
+                <p class="movie-genre"><b>Genre</b>&nbsp;Action</p>
+                <p class="movie-duration"><b>Dauer</b>&nbsp;1:40h</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/corpse-bride.jpg" alt="Corpse Bride">
+              <div class="flex flex-col movie-description">
+                <p class="movie-name">Corpse Bride</p>
+                <p class="movie-genre"><b>Genre</b>&nbsp;Animation</p>
+                <p class="movie-duration"><b>Dauer</b>&nbsp;1:40h</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/back-to-the-future.jpg" alt="Back to the future">
+              <div class="flex flex-col movie-description">
+                <p class="movie-name">Back to the future</p>
+                <p class="movie-genre"><b>Genre</b>&nbsp;SciFi</p>
+                <p class="movie-duration"><b>Dauer</b>&nbsp;1:40h</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="assets/scream.jpg" alt="Scream">
+              <div class="flex flex-col movie-description">
+                <p class="movie-name">Scream</p>
+                <p class="movie-genre"><b>Genre</b>&nbsp;Horror, Thriller</p>
+                <p class="movie-duration"><b>Dauer</b>&nbsp;1:40h</p>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="snacks">
+          <div class="description">
+            <h2 class="font-serif">Süßes oder Salziges?</h2>
+            <p class="font-thin font-sans">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+          </div>
+          <div class="snack-container flex flex-col">
+            <div class="snack-selection">
+              <div class="Popcorn snack">
+                <img src="assets/popcorn.jpg" alt="Popcorn">
+              </div>
+              <div class="Sweets snack">
+                <img src="assets/sweets.jpg" alt="Sweets">
+              </div>
+              <div class="Chips snack">
+                <img src="assets/chips.jpg" alt="Chips">
+              </div>
+              <div class="Nachos snack">
+                <img src="assets/nachos.png" alt="Nachos">
+              </div>
+              <div id="snack-selection">
+                <h3 class="font-serif">Deine Auswahl:</h3>
+                <div class="snack-selection-screen"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section id="seats">
+          <div class="description">
+            <h2 class="font-serif">Sitzplatzauswahl</h2>
+            <p class="font-thin font-sans">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+          </div>
+          <div class="divider-container">
+            <div class="divider"></div>
+          </div>
+          <div class="seats-container"></div>
+          <div id="seats-selection">
+            <h3 class="font-serif" id="seat-helper-text">Deine Auswahl:&nbsp;<span class="seat-selection-screen font-sans"></span></h3>
+          </div>
+        </section>
+        <div class="movie-button-container">
+          <button class="movie-button" id="movie-button">Auf in den Film</button>
+        </div>
+      </main>
+      <footer class="footer"></footer>
+    </main>
+  </body>
+</html>

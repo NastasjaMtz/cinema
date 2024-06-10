@@ -1,0 +1,313 @@
+@import "https://unpkg.com/open-props";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 1.6;
+  background-color: var(--primary-dark);
+  color: var(--primary-light);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.header {
+  width: 100%;
+  padding: var(--size-2) var(--size-7);
+  font-size: var(--font-size-5);
+  border-bottom: 1px solid #707070;
+}
+
+#landing {
+  position: relative;
+  margin-top: 11rem;
+  border-bottom: 1px solid #707070;
+  img {
+    object-fit: cover;
+    width: 100%;
+    height: calc(100vh - 11rem);
+  }
+  .hero-container {
+    width: 100%;
+    text-align: right;
+    display: flex;
+    justify-content: flex-end;
+    top: 0;
+    position: absolute;
+    .hero {
+      font-size: var(--font-size-7);
+      width: 46%;
+      margin-right: var(--size-3);
+      z-index: 1000;
+    }
+  }
+}
+
+#discovery {
+  width: 100%;
+  position: relative;
+  margin-top: var(--size-10);
+  .description {
+    padding-left: var(--size-6);
+    width: 100%;
+  }
+  .carousel {
+    margin-top: var(--size-6);
+    position: relative;
+    display: flex;
+    justify-content: center;
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+  }
+
+  .carousel-item {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    aspect-ratio: 1/1.414;
+    transition: opacity 0.3s ease-in-out;
+    cursor: pointer;
+    padding: 0 1rem;
+    img {
+      height: var(--size-13);
+      border-radius: var(--radius-4);
+      z-index: 100;
+      position: relative;
+    }
+    .movie-description {
+      display: none;
+      text-align: center;
+      padding: var(--size-4) var(--size-2);
+      background-color: var(--brand-1);
+      border-radius: var(--radius-4);
+      transform: translateY(-1rem);
+      width: 120%;
+      z-index: 1;
+      .movie-name {
+        font-weight: bold;
+        font-size: var(--font-size-4);
+      }
+    }
+  }
+
+  .carousel-item.active {
+    display: flex;
+    flex-grow: 1;
+    opacity: 1;
+    img {
+      height: var(--size-14);
+    }
+    .movie-description {
+      display: block;
+      opacity: 1;
+    }
+  }
+
+  .carousel-item.previous,
+  .carousel-item.next {
+    display: flex;
+    opacity: 0.5;
+    .movie-description {
+      display: none;
+      opacity: 0;
+    }
+  }
+
+  .carousel-item.previous:hover,
+  .carousel-item.next:hover {
+    opacity: 0.8;
+  }
+
+  .carousel-item.previous {
+    order: -1;
+  }
+
+  .carousel-item.next {
+    order: 1;
+  }
+}
+
+#snacks {
+  width: 100%;
+  position: relative;
+  margin-top: var(--size-10);
+  .description {
+    padding-left: var(--size-6);
+    width: 100%;
+  }
+  .snack-container {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+  .snack-selection {
+    display: grid;
+    width: min-content;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    gap: var(--size-3);
+    grid-template-areas:
+      "Popcorn Sweets"
+      "Chips Nachos"
+      "Selection Selection";
+    margin-top: var(--size-6);
+    .snack {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      opacity: 0.5;
+      transition: opacity 0.3s ease-in-out;
+    }
+    .snack:hover {
+      opacity: 0.8;
+    }
+    .snack.active {
+      opacity: 1 !important;
+    }
+    .Popcorn {
+      grid-area: Popcorn;
+    }
+    .Sweets {
+      grid-area: Sweets;
+    }
+    .Chips {
+      grid-area: Chips;
+    }
+    .Nachos {
+      grid-area: Nachos;
+    }
+
+    .snack-info-container {
+      display: none;
+      width: 50%;
+      box-sizing: border-box;
+      padding-top: var(--size-2);
+      padding-bottom: var(--size-2);
+    }
+    .snack-info-container.active {
+      display: block;
+    }
+
+    .snack-info {
+      text-align: center;
+      padding: var(--size-4) var(--size-2);
+      background-color: var(--brand-1);
+      border-radius: var(--radius-4);
+      width: 100%;
+      .name {
+        font-size: var(--font-size-4);
+      }
+    }
+    .snack-info-container.active.pl {
+      padding-left: var(--size-2);
+    }
+    .snack-info-container.active.pr {
+      padding-right: var(--size-2);
+    }
+
+    #snack-selection {
+      display: none;
+      grid-area: Selection;
+      .snack-selection-screen {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+    img {
+      height: var(--size-13);
+      border-radius: var(--radius-4);
+      position: relative;
+      aspect-ratio: 1/1.414;
+    }
+  }
+}
+
+#seats {
+  width: 100%;
+  position: relative;
+  margin-top: var(--size-10);
+  .description {
+    padding-left: var(--size-6);
+    width: 100%;
+  }
+  .divider-container {
+    padding: 0 var(--size-10);
+    margin-top: var(--size-9);
+    .divider {
+      background-color: var(--primary-light);
+      height: var(--size-2);
+      width: 100%;
+    }
+  }
+  .seats-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: var(--size-6);
+    .row {
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      justify-content: center;
+    }
+    .row:not(:first-child) {
+      margin-top: var(--size-1);
+    }
+    .seat {
+      width: var(--size-3);
+      height: var(--size-3);
+      background-color: var(--primary-light);
+      border-radius: var(--radius-round);
+      cursor: pointer;
+    }
+    .seat.active {
+      background-color: var(--brand-1);
+    }
+    .seat:not(:first-child) {
+      margin-left: var(--size-1);
+    }
+  }
+
+  #seats-selection {
+    margin-top: var(--size-3);
+    padding-left: var(--size-6);
+    .seat-selection-screen {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+  }
+
+  #seat-helper-text {
+    display: none;
+  }
+}
+
+.movie-button-container {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  margin-top: var(--size-3);
+  .movie-button {
+    display: none;
+    background-color: var(--brand-1);
+    border: none;
+    color: var(--primary-light);
+    width: fit-content;
+    border-radius: 0.75rem;
+    padding: var(--size-4);
+    font-size: var(--font-size-3);
+  }
+}
+
+.footer {
+  margin-top: var(--size-11);
+  height: var(--size-10);
+  background-color: var(--brand-2);
+}
